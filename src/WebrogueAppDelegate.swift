@@ -1,7 +1,7 @@
 @main
 public class WebrogueAppDelegate: SDLUIKitDelegate {
     static var shared: WebrogueAppDelegate?
-    var myWindow: UIWindow?
+    var webrogueWindow: UIWindow?
 
     override public func application(
         _ application: UIApplication,
@@ -13,10 +13,10 @@ public class WebrogueAppDelegate: SDLUIKitDelegate {
             application,
             didFinishLaunchingWithOptions: launchOptions
         )
-        myWindow = UIWindow(frame: UIScreen.main.bounds)
-        myWindow?.rootViewController = WebrogueUIViewController()
-        myWindow?.makeKeyAndVisible()
-        // runGame()
+        webrogueWindow = UIWindow(frame: UIScreen.main.bounds)
+        window = webrogueWindow
+        webrogueWindow?.rootViewController = WebrogueUIViewController()
+        webrogueWindow?.makeKeyAndVisible()
         return result
     }
 

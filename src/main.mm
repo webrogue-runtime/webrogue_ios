@@ -10,7 +10,9 @@ extern "C" void webrogue_ios_main();
 bool checkWASMJSCSupport() {
     JSContext *context = [[JSContext alloc] init];
     JSValue *retValue = [context evaluateScript: @"typeof WebAssembly"];
-    return [[retValue toString] isEqualToString: @"object"];
+    bool result = [[retValue toString] isEqualToString: @"object"];
+    [context release];
+    return result;
 }
 
 extern "C" int webrogueMain() {
